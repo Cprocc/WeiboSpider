@@ -27,12 +27,12 @@ class WeiboSpider(Spider):
             # 评论是hot列表还可以爬全部, 点赞信息拿不全，只有50页
             # https://weibo.cn/comment/hot/IlnxZov2M?rl=1&  评论可以拿到
             # https://weibo.cn/repost/IlnxZov2M?&page=1700  转发可以拿到
-            # yield Request(url="https://weibo.cn/comment/hot/IlnxZov2M?&page=1", callback=self.parse_comment,
-            #               meta={'weibo_url': 'IlnxZov2M?'})
+            yield Request(url="https://weibo.cn/comment/hot/IlnxZov2M?&page=1", callback=self.parse_comment,
+                          meta={'weibo_url': 'IlnxZov2M?'})
             # yield Request(url="https://weibo.cn/attitude/IlnxZov2M?&page=1", callback=self.parse_like,
             #               meta={'weibo_url': 'IlnxZov2M?'})
-            yield Request(url="https://weibo.cn/repost/IlnxZov2M?&page=1", callback=self.parse_rep,
-                          meta={'weibo_url': 'IlnxZov2M?'})
+            # yield Request(url="https://weibo.cn/repost/IlnxZov2M?&page=1", callback=self.parse_rep,
+            #               meta={'weibo_url': 'IlnxZov2M?'})
 
     # 个人信息页面开始
     # def parse_information(self, response):
